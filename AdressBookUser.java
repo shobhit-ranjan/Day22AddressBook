@@ -85,7 +85,7 @@ public class AdressBookUser {
 							phoneNumber, mailId));
 					counter = 1;
 				} else {
-					System.out.println();
+					
 					System.out.println(
 								"Enter the Number which you want to edit :1 firstname 2 lastname 3 Address 4.City 5.State 6.EmailUD 7 PinCode 8.PhoneNumber  ");
 					int choice = sc.nextInt();
