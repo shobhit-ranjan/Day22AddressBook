@@ -38,7 +38,7 @@ public class AdressBookUser {
 		for (int i = 0; i < noOfEntery; i++) {
 			userData = contactofuser.get(i);
 			System.out.println(userData.userFirstName + "  " + userData.userLastName + " " + userData.address + " "
-					+ userData.city + " " + userData.state + " " + userData.mailId + " " + userData.pinCode + " "
+					+ userData.city + " " + userData.state + " " +  userData.mailId  + " " + userData.pinCode + " "
 					+ userData.phoneNum);
 		}
 

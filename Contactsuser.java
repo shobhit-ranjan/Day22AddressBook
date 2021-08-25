@@ -10,7 +10,7 @@ public class Contactsuser {
 	long phoneNum;
 
 	 Contactsuser(String firstName, String lastName, String address, String city, String state, long pinCode,
-			long phoneNumber, String mailId) {
+		long phoneNumber, String mailId) {
 		this.userFirstName = firstName;
 		this.userLastName = lastName;
 		this.address = address;
