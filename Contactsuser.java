@@ -6,10 +6,10 @@ public class Contactsuser {
 	String city;
 	String state;
 	String mailId;
-	int pinCode;
+	long pinCode;
 	long phoneNum;
 
-	Contactsuser(String firstName, String lastName, String address, String city, String state, int pinCode,
+	Contactsuser(String firstName, String lastName, String address, String city, String state, long pinCode,
 			long phoneNumber, String mailId) {
 		this.userFirstName = firstName;
 		this.userLastName = lastName;
@@ -69,7 +69,7 @@ public class Contactsuser {
 		this.pinCode = zip;
 	}
 
-	public int getZip() {
+	public long getZip() {
 		return pinCode;
 	}
 
