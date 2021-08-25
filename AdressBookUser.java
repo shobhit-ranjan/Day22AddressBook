@@ -15,33 +15,47 @@ public class AdressBookUser {
 	void addContact() {
 		noOfEntery = sc.nextInt();
 		for (int i = 0; i < noOfEntery; i++) {
+
 			System.out.println("Your First Name ");
 			userFirstName = sc.next();
-			System.out.println("Your Last Name");
-			userLastName = sc.next();
-			System.out.println("Your Address");
-			address = sc.next();
-			System.out.println("Your City");
-			city = sc.next();
-			System.out.println("Your State");
-			state = sc.next();
-			System.out.println("Enter your Mailid");
-			mailId = sc.next();
-			System.out.println("Enter Your PinCode");
-			pinCode = sc.nextInt();
-			System.out.println("Enter PhoneNumber");
-			phoneNumber = sc.nextLong();
-			contactofuser.add(
-					new Contactsuser(userFirstName, userLastName, address, city, state, pinCode, phoneNumber, mailId));
-		}
+			try {
+				for (int j = 0; j <= contactofuser.size(); j++) {
+					if (contactofuser.isEmpty()) {
+						break;
+					} else {
+						if (userFirstName.equals(userData.userFirstName))
+							throw new UserIsThere();
+					}
+				}
 
-		for (int i = 0; i < noOfEntery; i++) {
-			userData = contactofuser.get(i);
-			System.out.println(userData.userFirstName + "  " + userData.userLastName + " " + userData.address + " "
-					+ userData.city + " " + userData.state + " " + userData.mailId + " " + userData.pinCode + " "
-					+ userData.phoneNum);
-		}
+				System.out.println("Your Last Name");
+				userLastName = sc.next();
+				System.out.println("Your Address");
+				address = sc.next();
+				System.out.println("Your City");
+				city = sc.next();
+				System.out.println("Your State");
+				state = sc.next();
+				System.out.println("Enter your Mailid");
+				mailId = sc.next();
+				System.out.println("Enter Your PinCode");
+				pinCode = sc.nextInt();
+				System.out.println("Enter PhoneNumber");
+				phoneNumber = sc.nextLong();
+				contactofuser.add(new Contactsuser(userFirstName, userLastName, address, city, state, pinCode,
+						phoneNumber, mailId));
+			} catch (UserIsThere e) {
+				System.out.println(e.getMessage());
+			}
 
+			for (int k = 0; k < noOfEntery; k++) {
+				userData = contactofuser.get(i);
+				System.out.println(userData.userFirstName + "  " + userData.userLastName + " " + userData.address + " "
+						+ userData.city + " " + userData.state + " " + userData.mailId + " " + userData.pinCode + " "
+						+ userData.phoneNum);
+			}
+
+		}
 	}
 
 	void editContact() {
@@ -163,5 +177,12 @@ public class AdressBookUser {
 
 			System.out.println("invalid input");
 		}
+	}
+}
+
+class UserIsThere extends Exception {
+	@Override
+	public String getMessage() {
+		return "User of this name is present";
 	}
 }
