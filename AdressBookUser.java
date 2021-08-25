@@ -87,7 +87,7 @@ public class AdressBookUser {
 				} else {
 					System.out.println();
 					System.out.println(
-							"Enter your choice to edit particular details.:1.firstname 2.lastname 3.address 4.city 5.state 6.email 7.zip 8.phn number ");
+								"Enter the Number which you want to edit :1 firstname 2 lastname 3 Address 4.City 5.State 6.EmailUD 7 PinCode 8.PhoneNumber  ");
 					int choice = sc.nextInt();
 					switch (choice) {
 					case 1:
