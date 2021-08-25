@@ -38,13 +38,14 @@ public class AdressBookUser {
 		for (int i = 0; i < noOfEntery; i++) {
 			userData = contactofuser.get(i);
 			System.out.println(userData.userFirstName + "  " + userData.userLastName + " " + userData.address + " "
-					+ userData.city + " " + userData.state + " " +  userData.mailId  + " " + userData.pinCode + " "
+					+ userData.city + " " + userData.state + " " + userData.mailId + " " + userData.pinCode + " "
 					+ userData.phoneNum);
 		}
 
 	}
 
 	void editContact() {
+		System.out.println("Enter the name of the person");
 		userFirstName = sc.next();
 		int counter = 0;
 		for (int i = 0; i < contactofuser.size(); i++) {
