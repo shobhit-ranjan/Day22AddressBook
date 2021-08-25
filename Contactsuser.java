@@ -9,7 +9,7 @@ public class Contactsuser {
 	long pinCode;
 	long phoneNum;
 
-	Contactsuser(String firstName, String lastName, String address, String city, String state, long pinCode,
+	 Contactsuser(String firstName, String lastName, String address, String city, String state, long pinCode,
 			long phoneNumber, String mailId) {
 		this.userFirstName = firstName;
 		this.userLastName = lastName;
