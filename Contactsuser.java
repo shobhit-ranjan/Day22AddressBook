@@ -1,6 +1,6 @@
 
 public class Contactsuser {
-	String userFirstName;
+	static String userFirstName;
 	String userLastName;
 	String address;
 	String city;
@@ -9,8 +9,8 @@ public class Contactsuser {
 	long pinCode;
 	long phoneNum;
 
-	 Contactsuser(String firstName, String lastName, String address, String city, String state, long pinCode,
-		long phoneNumber, String mailId) {
+	Contactsuser(String firstName, String lastName, String address, String city, String state, long pinCode,
+			long phoneNumber, String mailId) {
 		this.userFirstName = firstName;
 		this.userLastName = lastName;
 		this.address = address;

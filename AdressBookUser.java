@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class AdressBookUser {
 
-	ArrayList<Contactsuser> contactofuser = new ArrayList<>();
+	static ArrayList<Contactsuser> contactofuser = new ArrayList<>();
 	Scanner sc = new Scanner(System.in);
 	Contactsuser userData;
 	int noOfEntery;
@@ -178,8 +178,37 @@ public class AdressBookUser {
 			System.out.println("invalid input");
 		}
 	}
+
+	public void searchFromStateOrCity() {
+		if (contactofuser.isEmpty()) {
+			System.out.println("There in entry of any user");
+			return;
+		}
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter 1 if you want to search by city name else press any number for searching by state");
+		int temp = sc.nextInt();
+		if (temp == 1) {
+			System.out.println("Enter City Name: ");
+			String city = sc.next();
+
+			for (int i = 0; i < contactofuser.size(); i++) {
+				if (contactofuser.get(i).getState() == city) {
+					System.out.println("  " + contactofuser.get(i).getFirstName());
+				}
+			}
+		} else {
+			System.out.println("Enter State Name: ");
+			String State = sc.next();
+			for (int i = 0; i < contactofuser.size(); i++) {
+				if (contactofuser.get(i).getCity() == State) {
+					System.out.println("  " + contactofuser.get(i).getFirstName());
+				}
+			}
+		}
+	}
 }
 
+@SuppressWarnings("serial")
 class UserIsThere extends Exception {
 	@Override
 	public String getMessage() {

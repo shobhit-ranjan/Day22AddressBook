@@ -14,6 +14,8 @@ public class AddressBookMain {
 
 		Entery.DeleteUserEntery();
 
+		Entery.searchFromStateOrCity();
+
 		sc.close();
 	}
 }
