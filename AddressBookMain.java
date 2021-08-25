@@ -15,6 +15,16 @@ public class AddressBookMain {
 		if (input.equals("yes")) {
 
 			Entery.editContact();
+		} else {
+			System.out.println("All done");
+		}
+
+		System.out.println("you want to delete the user type yes or no");
+		input = sc.next();
+		if (input.equals("yes")) {
+			Entery.DeleteUserEntery();
+		} else {
+			System.out.println("All done");
 		}
 		sc.close();
 	}

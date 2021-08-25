@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class AdressBookUser {
 
-	ArrayList<Contactsuser> contact = new ArrayList<>();
+	ArrayList<Contactsuser> contactofuser = new ArrayList<>();
 	Scanner sc = new Scanner(System.in);
 	Contactsuser userData;
 	int noOfEntery;
@@ -31,12 +31,12 @@ public class AdressBookUser {
 			pinCode = sc.nextInt();
 			System.out.println("Enter PhoneNumber");
 			phoneNumber = sc.nextLong();
-			contact.add(
+			contactofuser.add(
 					new Contactsuser(userFirstName, userLastName, address, city, state, pinCode, phoneNumber, mailId));
 		}
 
 		for (int i = 0; i < noOfEntery; i++) {
-			userData = contact.get(i);
+			userData = contactofuser.get(i);
 			System.out.println(userData.userFirstName + "  " + userData.userLastName + " " + userData.address + " "
 					+ userData.city + " " + userData.state + " " + userData.mailId + " " + userData.pinCode + " "
 					+ userData.phoneNum);
@@ -47,8 +47,8 @@ public class AdressBookUser {
 	void editContact() {
 		userFirstName = sc.next();
 		int counter = 0;
-		for (int i = 0; i < contact.size(); i++) {
-			userData = contact.get(i);
+		for (int i = 0; i < contactofuser.size(); i++) {
+			userData = contactofuser.get(i);
 			if (userFirstName.equals(userData.userFirstName)) {
 				System.out.println();
 				System.out.println("Do u want to edit entire contact details? yes or no");
@@ -66,7 +66,7 @@ public class AdressBookUser {
 					pinCode = sc.nextInt();
 					System.out.println("Enter your new phn number:");
 					phoneNumber = sc.nextLong();
-					contact.set(i, new Contactsuser(userFirstName, userLastName, address, city, state, pinCode,
+					contactofuser.set(i, new Contactsuser(userFirstName, userLastName, address, city, state, pinCode,
 							phoneNumber, mailId));
 					counter = 1;
 				} else {
@@ -78,50 +78,50 @@ public class AdressBookUser {
 					case 1:
 						System.out.println("Enter your new first name:");
 						userFirstName = sc.next();
-						contact.set(i, new Contactsuser(userFirstName, userLastName, address, city, state, pinCode,
-								phoneNumber, mailId));
+						contactofuser.set(i, new Contactsuser(userFirstName, userLastName, address, city, state,
+								pinCode, phoneNumber, mailId));
 						break;
 					case 2:
 						System.out.println("Enter your new last name:");
 						userLastName = sc.next();
-						contact.set(i, new Contactsuser(userFirstName, userLastName, address, city, state, pinCode,
-								phoneNumber, mailId));
+						contactofuser.set(i, new Contactsuser(userFirstName, userLastName, address, city, state,
+								pinCode, phoneNumber, mailId));
 						break;
 					case 3:
 						System.out.println("Enter your new address:");
 						address = sc.next();
-						contact.set(i, new Contactsuser(userFirstName, userLastName, address, city, state, pinCode,
-								phoneNumber, mailId));
+						contactofuser.set(i, new Contactsuser(userFirstName, userLastName, address, city, state,
+								pinCode, phoneNumber, mailId));
 						break;
 					case 4:
 						System.out.println("Enter your new city:");
 						city = sc.next();
-						contact.set(i, new Contactsuser(userFirstName, userLastName, address, city, state, pinCode,
-								phoneNumber, mailId));
+						contactofuser.set(i, new Contactsuser(userFirstName, userLastName, address, city, state,
+								pinCode, phoneNumber, mailId));
 						break;
 					case 5:
 						System.out.println("Enter your new state:");
 						state = sc.next();
-						contact.set(i, new Contactsuser(userFirstName, userLastName, address, city, state, pinCode,
-								phoneNumber, mailId));
+						contactofuser.set(i, new Contactsuser(userFirstName, userLastName, address, city, state,
+								pinCode, phoneNumber, mailId));
 						break;
 					case 6:
 						System.out.println("Enter your new email:");
 						mailId = sc.next();
-						contact.set(i, new Contactsuser(userFirstName, userLastName, address, city, state, pinCode,
-								phoneNumber, mailId));
+						contactofuser.set(i, new Contactsuser(userFirstName, userLastName, address, city, state,
+								pinCode, phoneNumber, mailId));
 						break;
 					case 7:
 						System.out.println("Enter your new zip");
 						pinCode = sc.nextInt();
-						contact.set(i, new Contactsuser(userFirstName, userLastName, address, city, state, pinCode,
-								phoneNumber, mailId));
+						contactofuser.set(i, new Contactsuser(userFirstName, userLastName, address, city, state,
+								pinCode, phoneNumber, mailId));
 						break;
 					case 8:
 						System.out.println("Enter your new phn number");
 						phoneNumber = sc.nextLong();
-						contact.set(i, new Contactsuser(userFirstName, userLastName, address, city, state, pinCode,
-								phoneNumber, mailId));
+						contactofuser.set(i, new Contactsuser(userFirstName, userLastName, address, city, state,
+								pinCode, phoneNumber, mailId));
 						break;
 
 					}
@@ -131,7 +131,7 @@ public class AdressBookUser {
 				System.out.println("After new entery");
 
 				for (i = 0; i < noOfEntery; i++) {
-					userData = contact.get(i);
+					userData = contactofuser.get(i);
 					System.out.println(userData.userFirstName + " " + userData.userLastName + " " + userData.address
 							+ " " + userData.city + " " + userData.state + " " + userData.mailId + " "
 							+ userData.pinCode + " " + userData.phoneNum);
@@ -141,6 +141,26 @@ public class AdressBookUser {
 
 			}
 
+		}
+	}
+
+	public void DeleteUserEntery() {
+		System.out.println();
+		System.out.println("Enter the name of person you want to delete");
+		userFirstName = sc.next();
+		int counter = 0;
+		for (int i = 0; i < contactofuser.size(); i++) {
+			userData = contactofuser.get(i);
+			if (userFirstName.equals(Contactsuser.userFirstName)) {
+				contactofuser.remove(userData);
+				counter = 1;
+				System.out.println();
+				System.out.println("yes its deleted");
+			}
+		}
+		if (counter == 0) {
+
+			System.out.println("invalid input");
 		}
 	}
 }
